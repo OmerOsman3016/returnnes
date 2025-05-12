@@ -455,8 +455,8 @@
             destinationGeometry: { x: 'e_lon', y: 'e_lat' }
           },
           style: (feature) => {
-            const baseRadius = 12;
-            const maxRadius = 6;
+            const baseRadius = 6;
+            const maxRadius = 12;
             const volume = feature.properties.e_Volume || 0;
             
             // Different styles for origin and destination points
@@ -568,7 +568,7 @@
              </div>`
           : `<div style="min-width: 200px;">
                <h4 style="margin: 0 0 10px; color: #2a5885;">Displacement Destination</h4>
-               <p><strong>Location:</strong> ${feature.properties.e_locality}</p>
+               <p><strong>State:</strong> ${feature.properties.e_locality}</p>
                <p><strong>Total Displaced Population:</strong> ${feature.properties.e_Volume ? feature.properties.e_Volume.toLocaleString() : 'N/A'}</p>
                <p><strong>Main Needs:</strong> ${feature.properties.main_needs || 'Not specified'}</p>
              </div>`;
@@ -596,13 +596,13 @@
             <svg width="18" height="18" style="margin-right: 8px;">
               <circle cx="9" cy="9" r="8" fill="#418FDE" stroke="#fff" stroke-width="1"/>
             </svg>
-            <span>Destination Points</span>
+            <span>Displacement State </span>
           </div>
           <div style="display: flex; align-items: center; margin: 5px 0;">
             <svg width="18" height="18" style="margin-right: 8px;">
               <circle cx="9" cy="9" r="8" fill="rgb(255, 103, 31)" stroke="#fff" stroke-width="1"/>
             </svg>
-            <span>Origin Points</span>
+            <span>Destination State</span>
           </div>
         `;
         return div;
